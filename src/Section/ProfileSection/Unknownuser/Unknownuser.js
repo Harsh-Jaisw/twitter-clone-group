@@ -4,61 +4,34 @@ import style from "../ProfileSection.module.css";
 import WestIcon from "@mui/icons-material/West";
 import Buttons from "../../../Atom/Button/Buttons";
 import { useNavigate } from "react-router-dom";
-
+import CalendarMonthOutlinedIcon from '@mui/icons-material/CalendarMonthOutlined';
+import { FiShare } from "react-icons/fi";
+import { MdOutlinePoll } from "react-icons/md";
+import { CiHeart } from "react-icons/ci";
+import { FaRegComment } from "react-icons/fa";
+import { AiOutlineRetweet } from "react-icons/ai";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { Avatar } from "@mui/material";
-import ChatBubbleOutlineIcon from "@mui/icons-material/ChatBubbleOutline";
-import SyncIcon from "@mui/icons-material/Sync";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import PollIcon from "@mui/icons-material/Poll";
-import UploadIcon from "@mui/icons-material/Upload";
+
 import VerifiedIcon from "@mui/icons-material/Verified";
 import style2 from "./Unknownuser.module.css";
 import { userProfile,
     userTweet,userTweetProfile } from "../../../Recoil/atom";
-
-// import {tweetPosts} from "../../../ConstData/ConstData"
 function Unknownuser() {
   const nevigate = useNavigate();
   const unknownProfileData = useRecoilValue(userProfile);
   const replyTweetPost = useSetRecoilState(userTweet);
-  const replyProfileDetails = useSetRecoilState(userTweetProfile);
   const tweets = unknownProfileData.tweets;
   console.log(tweets)
-  // const tweetsReply = unknownProfileData.tweets.TweetReplies;
-  
-  //    const[newPost,setNewPost] = useRecoilState(isTweet);
-  //   const[newProfile,setNewProfile] = useRecoilState(userTweet);
-  //   const[post,setPost]=useState(tweetPosts)
-  //   console.log(...post)
-  //  useEffect(() => {
-  //   fetchData()
-
-  //   },[newPost]);
-
-  // function  fetchData()
-  //   {
-  //     setPost(tweetPosts)
-  //   }
-
-  //  function xyz (dataName)  {
-  //     setNewProfile(dataName)
-  //     nevigate("/Profile2")
-
-  //   };
-
   function forReply(takeData) {
     replyTweetPost(takeData);
     nevigate("/Tweetpage");
   }
   return (
     <>
-      <div
-        className={style.wrapper}
-
-        // onClick={ ()=>xyz(({
-
-        // } )) }
+     <div
+        className={style.wrapper
+        }
       >
         <div className={style.feed__header}>
           <p onClick={() => nevigate("/")}>
@@ -74,13 +47,25 @@ function Unknownuser() {
             <Buttons className={style.btn} Sign={"Edit profile"} />
           </span>
         </div>
+        <div >
         <div className={style.textcontaint}>
-          <h4>{`${"Name:-"}${unknownProfileData.name}`}</h4>
-          <h5>{`${"@"}${unknownProfileData.handlerName}`}</h5>
-          <h5>{`${"tweetCount:-"}${unknownProfileData.tweetCount}`}</h5>
-          <h5>{`${"likescount:-"}${unknownProfileData.likesCount}`}</h5>
-          <h5>{`${"followers:-"}${unknownProfileData.followers}`}</h5>
-          <h5>{`${"followings:-"}${unknownProfileData.followings}`}</h5>
+        <h4>{unknownProfileData.name}</h4>
+          <h6 style={{marginLeft:'0rem'}}>{unknownProfileData.handlerName}</h6>
+         
+          
+        </div>
+         
+         
+           <span className={style.join}
+           style={{marginTop:'-1rem',marginLeft:'1rem'}}
+           ><CalendarMonthOutlinedIcon/> Joined January 2022</span>
+         <div style={{display:'flex',gap:'1rem',marginLeft:'1rem',marginTop:'1rem'}}> <div>{unknownProfileData.followers} {"Followers"}</div>
+          <div>{unknownProfileData.followings} {"Followings"}</div></div>
+          <div className={style.heading} style={{marginTop:'4rem'}}>
+        <span>Tweets</span>
+        <span>Tweets&replies</span>
+        <span>Media</span>
+        <span>Likes</span> </div>
         </div>
       </div>
       <div>
@@ -139,24 +124,41 @@ function Unknownuser() {
                       />
                     </div>
                     <div className={style2.icons}>
-                      <span>
-                        {x.tweetCount}
-                        <ChatBubbleOutlineIcon />
-                      </span>
-                      <span>
-                        {x.retweetCount}
-                        <SyncIcon />
-                      </span>
-                      <span>
-                        {x.likesCount}
-                        <FavoriteBorderIcon />
-                      </span>
-                      <span>
-                        {x.viewsCount}
-                        <PollIcon />
-                      </span>
+                    <div><Buttons
+                    className={style.btns}
+                    
+                    image={<FaRegComment style={{ fontSize: "15px" }} />}
+                  />{x.tweetCount}
+                  </div>
+                  <div><Buttons
+                    className={style.btns}
+                    image={<AiOutlineRetweet style={{ fontSize: "15px" }} />}
+                  /> {x.retweetCount}
+                  </div>
+                  
+                  <div>
+                    <Buttons
+                    
+                      className={style.btns}
+                      image={
+                        <CiHeart
+                          style={{ fontSize: "15px" }}
+                          
+                        />
+                      } 
+                    />
+                    {x.likesCount}
+                  </div>
+                  <div>
+                  <Buttons
+                    className={style.btns}
+                    image={<MdOutlinePoll style={{ fontSize: "15px" }} />}
+                  />{x.viewsCount}</div>
 
-                      <UploadIcon />
+                  <Buttons
+                    className={style.btns}
+                    image={<FiShare style={{ fontSize: "15px" }} />}
+                  />
                     </div>
                   </div>
                 </div>

@@ -10,16 +10,12 @@ import UploadIcon from "@mui/icons-material/Upload";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import style2 from "./Tweetpost.module.css";
 import { userTweet,forPassingId, indexAtom } from "../../../Recoil/atom";
-// import CustomButton from "../../../Atom/Button/CustomButton";
+
 function Tweetpost() {
   const tweetPostData = useRecoilValue(userTweet);
   const index = useRecoilValue(forPassingId);
   const indice=useRecoilValue(indexAtom)
-  // const nameArray=(tweetPostData.TweetReplies.name)
-  // const handlerNameArray=(tweetPostData.TweetReplies.handlerName)
-  // const tweetReplyTextArray=(tweetPostData.TweetReplies.tweetReplyText)
-  //    const k=nameArray.map((a)=>a)
-  //     console.log(k)
+  
   console.log(index)
   const [post, setPost] = useState(tweetPosts);
   const list = JSON.parse(localStorage.getItem("UserDetail"))
@@ -158,7 +154,7 @@ function Tweetpost() {
                 <div>
                   <Avatar
                     className={style2.avatar}
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Steve_Jobs_Headshot_2010-CROP2.jpg/800px-Steve_Jobs_Headshot_2010-CROP2.jpg"
+                    src="https://www.imgstatus.com/wp-content/uploads/2019/11/Whastapp-Dp-Joker.jpg"
                   />
                 </div>
 

@@ -265,15 +265,18 @@ export default function Card() {
                   </DialogActions>
                 </Dialog>
                 <div className={style.socialbtn}>
-                  <Buttons
+                  <div><Buttons
                     className={style.btns}
                     btnNext={()=>handleClickOpen(i)}
                     image={<FaRegComment style={{ fontSize: "15px" }} />}
-                  />
-                  <Buttons
+                  />{tweetPost.tweetCount}
+                  </div>
+                  <div><Buttons
                     className={style.btns}
                     image={<AiOutlineRetweet style={{ fontSize: "15px" }} />}
-                  /> 
+                  /> {tweetPost.retweetCount}
+                  </div>
+                  
                   <div>
                     <Buttons
                       btnNext={() =>
@@ -289,10 +292,11 @@ export default function Card() {
                     />
                     {tweetPost.likesCount}
                   </div>
+                  <div>
                   <Buttons
                     className={style.btns}
                     image={<MdOutlinePoll style={{ fontSize: "15px" }} />}
-                  />
+                  />{tweetPost.viewsCount}</div>
 
                   <Buttons
                     className={style.btns}
