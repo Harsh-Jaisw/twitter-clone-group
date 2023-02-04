@@ -43,7 +43,7 @@ export default function Card() {
     
   //   }
   // },[])
-  const getTweet=JSON.parse(localStorage.getItem('key'))
+ 
   useEffect(() => {
     fetchData();
   },[newPost]);
@@ -56,7 +56,7 @@ export default function Card() {
     setNewProfile(dataName);
     nevigate("/publicpage");
   }
-  console.log(post.map((x)=>x.id))
+  //console.log(post.map((x)=>x.id))
         
   function handleLike(takeLikes) {
     //console.log(takeLikes.Index)
@@ -136,11 +136,16 @@ export default function Card() {
    
     setTweetText("");
     setTweets([obj,...tweets])
-    localStorage.setItem('key',JSON.stringify(tweets))
+    
+   
+    setPost([...tweets,...post])
+    localStorage.setItem('key',JSON.stringify(post))
     setImage("");
-    inputRef.current.value = "";
+    inputRef.current.value = ""
     
   }
+  let getTweet=[]
+  getTweet=JSON.parse(localStorage.getItem('key'))
   console.log(tweets)
   function HandleInput(e) {
     setStoreArray(e.target.value)
@@ -160,6 +165,11 @@ export default function Card() {
           onChange={GetTweet}
           placeholder="What's happening"
         />
+         {image && (
+          <div className={style.imageWrapper}>
+            <img src={image} height="50%" width="50%" alt="foo" />
+          </div>
+        )}
         {/* <p style={{ color: "#00acee", fontWeight: "600" }}>
                 <PublicOutlinedIcon />
                 Everyone can reply
@@ -185,7 +195,9 @@ export default function Card() {
           </button>
         </div>{" "}
       </div>
-      {post.map((tweetPost,i) => {
+      {/* {getTweet.length ? (
+      <> */}
+      {getTweet.map((tweetPost,i) => {
         return (
           <>
             <div key={tweetPost.id}  className={style.maindiv}>
@@ -292,6 +304,8 @@ export default function Card() {
           </>
         );
       })}
+      {/* </>):
+      <></>} */}
     </>
   );
 }

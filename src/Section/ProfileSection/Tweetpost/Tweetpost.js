@@ -9,11 +9,12 @@ import PollIcon from "@mui/icons-material/Poll";
 import UploadIcon from "@mui/icons-material/Upload";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import style2 from "./Tweetpost.module.css";
-import { userTweet,forPassingId } from "../../../Recoil/atom";
+import { userTweet,forPassingId, indexAtom } from "../../../Recoil/atom";
 // import CustomButton from "../../../Atom/Button/CustomButton";
 function Tweetpost() {
   const tweetPostData = useRecoilValue(userTweet);
-  const indices = useRecoilValue(forPassingId);
+  const index = useRecoilValue(forPassingId);
+  const indice=useRecoilValue(indexAtom)
   // const nameArray=(tweetPostData.TweetReplies.name)
   // const handlerNameArray=(tweetPostData.TweetReplies.handlerName)
   // const tweetReplyTextArray=(tweetPostData.TweetReplies.tweetReplyText)
@@ -22,6 +23,8 @@ function Tweetpost() {
   console.log(index)
   const [post, setPost] = useState(tweetPosts);
   const list = JSON.parse(localStorage.getItem("UserDetail"))
+  console.log(list[indice].name)
+  
   return (
     <>
       <div className={style2.wrapper}>
@@ -163,7 +166,7 @@ function Tweetpost() {
                   <>
                     <span className={style2.text}>
                       <h3>
-                      list[indices].name
+                      {list[indice].name}
                         <VerifiedIcon style={{ color: "#00acee" }} />
                       </h3>
                     </span>

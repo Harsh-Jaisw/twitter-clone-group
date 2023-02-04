@@ -36,7 +36,7 @@ export default function Registration() {
   useEffect(()=>{
             if(localStorage.getItem('UserDetail')){
               let allUserDetail=JSON.parse(localStorage.getItem('UserDetail'))
-              console.log(allUserDetail,'hellooo')
+              
               setInfo(allUserDetail)
             } 
   },[])
