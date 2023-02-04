@@ -1,0 +1,87 @@
+.btnclass{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    gap:1rem;
+    
+}
+.maincontainer{
+    width:35rem;
+    height:35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:18rem;
+    height:2.4rem;
+    border-radius: 5rem;
+    background-color: white;
+    border:1px solid lightgray;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    color:#3c4043;
+}
+.btn:hover{
+    background-color:lightgray;
+    cursor:pointer;
+}
+.applebtn{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:18rem;
+    height:2.4rem;
+    border-radius: 5rem;
+    background-color: white;
+    border:1px solid lightgray;
+    font-size: 15px;
+    color:black;
+    letter-spacing: 0.25px;
+    font-weight: 700;
+
+}
+.applebtn:hover{
+    background-color:lightgray;
+    cursor:pointer;    
+}
+.nxtbtn{
+    display:flex;
+    justify-content: center; 
+    align-items: center;
+    width:18rem;
+    height:2.4rem;
+    color:white;
+    border-radius: 5rem;
+    text-decoration: none;
+    background-color: black;
+    font-size: 14px;
+}
+.nxtbtn:hover{
+    cursor:pointer;
+}
+.inputs{
+    width:17.5rem;
+    height:3.5rem;
+}
+.para {
+    width: 50%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 5px 0 5px;
+}
+
+.paraSpan {
+    background: #fff;
+    padding: 0 10px;
+}
+@media only screen and  (max-width:660px) {
+    .maincontainer{
+        width:auto
+    }
+}

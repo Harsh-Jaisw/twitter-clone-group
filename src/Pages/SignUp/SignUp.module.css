@@ -1,0 +1,74 @@
+.btnclass{
+    display: flex;
+    flex-direction: column;
+    gap:1rem; 
+}
+.maincontainer{
+    width:35rem;
+    height:35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.btn{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:18rem;
+    height:2.4rem;
+    border-radius: 5rem;
+    background-color: white;
+    border:1px solid lightgray;
+    font-size: 14px;
+}
+a{
+    text-decoration: none;
+}
+.btn:hover{
+    background-color:lightgray;
+    cursor:pointer;
+}
+.nxtbtn{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:18rem;
+    height:2.4rem;
+    color:white;
+    border-radius: 5rem;
+    background-color: black;
+    font-size: 14px;
+}
+.nxtbtn:hover{
+    cursor:pointer;
+}
+.applebtn{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:18rem;
+    height:2.4rem;
+    border-radius: 5rem;
+    background-color: white;
+    border:1px solid lightgray;
+    font-size: 15px;
+    color:black;
+    letter-spacing: 0.25px;
+    font-weight: 700;
+}
+.applebtn:hover{
+    background-color:lightgray;
+    cursor:pointer;    
+}
+.inputs{
+    width:17.5rem;
+    height:3.5rem;
+}
+p{
+    font-size: small;
+}
+@media only screen and  (max-width:660px) {
+    .maincontainer{
+        width:auto
+    }
+}
