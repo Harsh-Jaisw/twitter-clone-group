@@ -9,7 +9,7 @@ import RightSection from '../../Section/RightSection/RightSection'
 import { useEffect } from 'react'
 function Home() {
   const isLoggedIn=useRecoilValue(isLoginAtom)
-  console.log(isLoggedIn)
+  // console.log(isLoggedIn)
   const navigate=useNavigate()
   useEffect(()=>{
    if(!isLoggedIn){

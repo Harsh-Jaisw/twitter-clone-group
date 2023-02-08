@@ -59,6 +59,12 @@
    border: none;
    background: white;
 }
+.imageWrapper{
+   display:flex;
+   margin-left: 20px;
+   height:50%;
+    width:80%;
+}
 .btns:focus{
  
 }

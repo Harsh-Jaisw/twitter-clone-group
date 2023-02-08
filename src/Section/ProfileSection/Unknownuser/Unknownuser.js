@@ -20,9 +20,10 @@ import { userProfile,
 function Unknownuser() {
   const nevigate = useNavigate();
   const unknownProfileData = useRecoilValue(userProfile);
+  // console.log(unknownProfileData)
   const replyTweetPost = useSetRecoilState(userTweet);
   const tweets = unknownProfileData.tweets;
-  console.log(tweets)
+  // console.log(tweets)
   function forReply(takeData) {
     replyTweetPost(takeData);
     nevigate("/Tweetpage");
@@ -69,8 +70,8 @@ function Unknownuser() {
         </div>
       </div>
       <div>
-        {tweets && tweets.length > 0 ? (
-          tweets.map((x) => {
+        {/* {tweets && tweets.length > 0 ? ( */}
+          {tweets?.map((x) => {
             return (
               <>
                 <div key={x.id}>
@@ -164,10 +165,11 @@ function Unknownuser() {
                 </div>
               </>
             );
-          })
-        ) : (
-          <>""</>
-        )}
+          })}
+          {/* ) : (
+          <>""</> */}
+        {/* ) */}
+        
       </div>
     </>
   );

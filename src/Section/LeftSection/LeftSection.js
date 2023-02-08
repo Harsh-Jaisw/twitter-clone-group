@@ -29,21 +29,19 @@ function LeftSection() {
     
     const obj = {
       id: Math.random(),
-      profile: ("https://www.imgstatus.com/wp-content/uploads/2019/11/Whastapp-Dp-Joker.jpg"
-          
-      ),
+      profile: ("https://www.imgstatus.com/wp-content/uploads/2019/11/Whastapp-Dp-Joker.jpg"),
       name: list[0].name,
       handlerName: "@" + list[0].email,
       organization: "",
       tweetText: tweet,
-      // tweetPic:
-      //   "https://lh3.googleusercontent.com/8ygpNx4Er1H9LmB-D8W7cBi-qsvcDSDlWw2CVIk5bHFM77q6a46V0GNxSzopAUtvLKIApDTW7RKnrJ7m7Yp4obN1s23V3dRMrYLwvz5GJc_gu1N-M8tGkyhFYGf40nwZCg7jbgGa1g=w1920-h1080",
-      tweetCount: 100,
-      retweetCount: 100,
-      likesCount: 100,
-      viewsCount: "102k",
-      followers: 200,
-      followings: 400,
+      tweetPic:
+        "https://lh3.googleusercontent.com/8ygpNx4Er1H9LmB-D8W7cBi-qsvcDSDlWw2CVIk5bHFM77q6a46V0GNxSzopAUtvLKIApDTW7RKnrJ7m7Yp4obN1s23V3dRMrYLwvz5GJc_gu1N-M8tGkyhFYGf40nwZCg7jbgGa1g=w1920-h1080",
+      tweetCount: 0,
+      retweetCount: 0,
+      likesCount: 0,
+      viewsCount: 0,
+      followers:0,
+      followings: 0,
       joinedDate: "22 dec 2022",
     };
     setOpen(false);
@@ -52,7 +50,7 @@ function LeftSection() {
      
     }
    
-    setTweets(tweets.unshift(obj))
+    setTweets([obj,...tweets])
     setLoginStatus(loginStatus+1)
     setTweet("");
     

@@ -6,6 +6,7 @@ import { useTheme } from "@mui/material/styles";
 import style from "./Registration.module.css";
 import Buttons from "../../Atom/Button/Buttons";
 import Input from "../../Atom/Input/Input";
+import {nanoid} from "nanoid"
 import {
   isValidEmail,
   isValidMobile,
@@ -58,6 +59,7 @@ export default function Registration() {
   } 
   function submitFunction() {
     const data = {
+      id:nanoid(3),
       name,
       email,
       phone,

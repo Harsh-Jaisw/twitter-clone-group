@@ -28,8 +28,8 @@ const PopOver = () => {
               className={style.photo}
             />{" "}
             <div style={{ display: "flex" ,flexDirection:"column"}}>
-              <span style={{ fontWeight: "600" }}>{x[index].name}</span>
-              <span style={{fontSize:"12px"}}>{x[index].email}</span>
+              <span style={{ fontWeight: "600" }}>{x[index]?.name}</span>
+              <span style={{fontSize:"12px"}}>{x[index]?.email}</span>
             </div>{" "}
             <MoreHorizOutlinedIcon />
           </button>

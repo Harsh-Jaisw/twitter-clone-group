@@ -112,7 +112,7 @@ function Tweetpost() {
           <div>
             <Avatar
               className={style2.avatar}
-              src=""
+              src="https://pbs.twimg.com/media/FTduUpuXEAA70eS?format=jpg&name=small"
             />
           </div>
 
