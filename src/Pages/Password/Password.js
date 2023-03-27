@@ -55,7 +55,7 @@ export default function Password() {
     >
       <div className={style.maincontainer}>
         <TwitterIcon style={{ color: "#00acee" }} />
-        <h2>Enter your Password</h2>
+        <h2 className={style.pwHead}>Enter your Password</h2>
         <DialogContent className={style.btnclass}>
           <Input className={style.inputs} type="password" handleOnchange={handledata} text="Password" />
          
@@ -64,7 +64,7 @@ export default function Password() {
             btnNext={Handledetail}
             Sign="Log in"
           />
-          <p>Don't have an account?<Link to={"/signup"}> Sign up</Link></p>
+          <p className={style.para2}>Don't have an account?<Link to={"/signup"}> Sign up</Link></p>
         </DialogContent>
       </div>
     </Dialog>

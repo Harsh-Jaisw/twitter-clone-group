@@ -1,0 +1,15 @@
+.smallIcons{
+ 
+    display: flex;
+
+    justify-content: space-around;
+
+  margin: 2rem;
+}
+.mainDiv{
+    
+    width: 8rem;
+    height: auto;
+   
+
+}

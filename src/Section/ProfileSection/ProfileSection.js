@@ -2,7 +2,6 @@ import React,{useState} from "react";
 import style from "./ProfileSection.module.css";
 import { useNavigate } from "react-router-dom";
 import WestIcon from "@mui/icons-material/West";
-// import Buttons from "../../Atom/Button/Buttons";
 import { newtweet,indexAtom } from "../../Recoil/atom";
 import { CiHeart } from "react-icons/ci";
 import { FaRegComment } from "react-icons/fa";
@@ -19,16 +18,18 @@ import { useRecoilState, useRecoilValue } from "recoil";
 
 function ProfileSection() {
   const [open, setOpen] = useState(false);
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(100);
   const nevigate = useNavigate();
   const Data=JSON.parse(localStorage.getItem("UserDetail"))
   let tweets=useRecoilValue(newtweet)
   let index=useRecoilValue(indexAtom)
-  //console.log(tweets)
-  function addCount() {
-    if (count === 0) {
-      setCount(1);
-    } else if (count == 1) setCount(0);
+ 
+  function addCount(i) {
+  
+   
+    if (count === 100) {
+      setCount(101);
+    } else if (count == 101) setCount(100);
   }
   const handleClickOpen = () => {
     setOpen(true);
@@ -68,7 +69,7 @@ function ProfileSection() {
           <span className={style.join}><CalendarMonthOutlinedIcon/> Joined January 2022</span>
           <div className={style.follow}>
           <span>2000following</span>
-          <span>20000followers</span></div>
+          <span>200000followers</span></div>
         </div>
         <div className={style.heading}>
         <span>Tweets</span>
@@ -143,7 +144,7 @@ function ProfileSection() {
                   image={
                     <CiHeart
                       style={{ fontSize: "15px" }}
-                      onClick={addCount}
+                      onClick={()=>addCount(tweetPost)}
                     />
                   }
                 />

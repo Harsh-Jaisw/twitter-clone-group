@@ -59,12 +59,6 @@
    border: none;
    background: white;
 }
-.imageWrapper{
-   display:flex;
-   margin-left: 20px;
-   height:50%;
-    width:80%;
-}
 .btns:focus{
  
 }
@@ -155,3 +149,9 @@ overflow:hidden;
 /* .avatar{
    z-index: -1;
 } */
+
+@media screen and (max-width:660px){
+   .mainDiv{
+      display: none;
+   }
+}

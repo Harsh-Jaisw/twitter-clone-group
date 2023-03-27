@@ -112,9 +112,11 @@ export default function Login() {
         open={open}
         aria-labelledby="responsive-dialog-title"
       >
+
        <div className={style.maincontainer}>
-          <TwitterIcon style={{color:"#00acee",marginTop:"1rem",fontSize:"xx-large"}}/>
-          <h2>Sign in to twitter</h2>
+          {/* <TwitterIcon style={{color:"#00acee",marginTop:"1rem",fontSize:"xx-large"}}/> */}
+          <TwitterIcon className={style.chidiya} style={{fontSize:"xx-large",color:"#00acee"}}/>
+          <h2 className={style.H2}>Sign in to twitter</h2>
         
 
         <DialogContent className={style.btnclass}>
@@ -130,7 +132,8 @@ export default function Login() {
               image={<BsApple/>}
               Sign="Sign in with Apple"
             />
-            
+             <div className={style.or}><hr style={{width:'45%',textAlign:'left',marginLeft:'0',height:'0rem'}}></hr>
+            <span style={{marginLeft:'0.5rem',marginTop:'-1'}}>or</span><hr style={{width:'45%',textAlign:'left',marginLeft:'0.5rem',height:'0rem'}}></hr></div>
             <Input  className={style.inputs} handleOnchange={handledata} text="Phone,name or Email"/>
              
              <Buttons
@@ -143,7 +146,7 @@ export default function Login() {
               className={style.btn}
               Sign="Forgot password?"
             />
-           <p> Don't have an account?<Link to={"/signup"}> Sign up</Link></p>
+           <p className={style.paragraph}> Don't have an account?<Link to={"/signup"}> Sign up</Link></p>
         </DialogContent>
         </div>
       </Dialog>

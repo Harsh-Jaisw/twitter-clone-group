@@ -10,19 +10,53 @@
 display: flex;
 flex-direction: row;
 position: sticky;
-;
+
 }
 .midDiv{
     display: flex;
     flex-direction: row;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
 }
-.rightDiv{
-    /* display: flex; */
-    /* flex-direction: row; */
+/* .rightDiv{
+    display: flex; 
+    flex-direction: column;
     position: sticky;
-}
+    width: auto;
+} */
 
 .midDiv::-webkit-scrollbar{
     width: 0;
+}
+.minLeft{
+    display: none;
+}
+
+@media screen and (max-width:1004px) {
+    .rightDiv{
+        display: none;
+    }
+}
+@media screen and (max-width:660px) {
+    .leftDiv{
+        display: none;
+    }
+    .rightDiv{
+        display: none;
+    }
+   
+}
+@media screen and (max-width:1277px) {
+    .leftDiv{
+        display: none;
+    }
+    .minLeft{
+        display: block;
+    }
+    
+}
+@media screen and (max-width:480px){
+    .minLeft{
+        display: none;
+    }
+  
 }

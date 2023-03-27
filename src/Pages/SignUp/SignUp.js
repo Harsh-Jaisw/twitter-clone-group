@@ -77,26 +77,38 @@ import React from 'react'
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { useTheme } from "@mui/material/styles";
+import { useTheme, createStyles } from "@mui/material/styles";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import style from "./SignUp.module.css"
 import Buttons from '../../Atom/Button/Buttons';
 import { BsApple } from "react-icons/bs"
 import { Link } from "react-router-dom"
 import {FcGoogle} from "react-icons/fc"
+import HorizontalRuleIcon from '@mui/icons-material/HorizontalRule';
 export default function SignUp() {
   const [open, setOpen] = React.useState(true);
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
+  
+  
   return (
       <Dialog
       fullScreen={fullScreen}
       open={open}
       aria-labelledby="responsive-dialog-title"
+      // PaperProps={{
+      //   style: {
+      //     borderRadius: "20px",
+       
+      //   },
+      // }}
     >
+       {/* <TwitterIcon style={{ color: "#00acee",fontSize:'xx-large'}} /> */}
+       <TwitterIcon className={style.chidiya} style={{ fontSize:'30px'}} />
       <div className={style.maincontainer}>
-        <TwitterIcon style={{ color: "#00acee" }} />
-        <h2>Join Twitter today </h2>
+       
+
+        <h2 className={style.join}>Join Twitter today </h2>
         <DialogContent className={style.btnclass}>
         <Buttons
               className={style.btn}
@@ -108,12 +120,15 @@ export default function SignUp() {
             image={<BsApple />}
             Sign="Sign up with Apple"
           />
+        
+          <div className={style.or}><hr style={{width:'45%',textAlign:'left',marginLeft:'0',height:'0rem'}}></hr>
+            <span style={{marginLeft:'0.5rem',marginTop:'-1'}}>or</span><hr style={{width:'45%',textAlign:'left',marginLeft:'0.5rem',height:'0rem'}}></hr></div>
           <Link to="/register"><Buttons
             className={style.btn}
             Sign="Sign up with phone or email"
           /></Link>
-          <p>By signing up, you agree to the Terms of Service <br/>and Privacy Policy, including Cookie Use.</p>
-          <p>Have an account already? <Link to={"/login"}> Log in</Link></p>
+          <p className={style.P}>By signing up, you agree to the Terms of Service <br/>and Privacy Policy, including Cookie Use.</p>
+          <p className={style.P1}>Have an account already? <Link to={"/login"}> Log in</Link></p>
         </DialogContent>
       </div>
     </Dialog>

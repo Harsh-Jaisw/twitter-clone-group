@@ -50,3 +50,43 @@ height: 50rem;
 .main::-webkit-scrollbar{
     display: none;
 }
+.minLeft{
+    display: none;
+}
+@media screen and (max-width:660px) {
+    .container{
+        display: none;
+    }
+    .rightContainer{
+        display: none;
+    }
+    .minLeft{
+        display: block;
+    }
+}
+ @media screen and (max-width:1280px) {
+    .container{
+        display: none;
+    }
+    .minLeft{
+        display: block;
+    }
+   
+}
+@media screen and (max-width:499px) {
+    .container{
+        display: none;
+    }
+  
+    .minLeft{
+        display: none;
+    }
+}
+@media screen and (max-width:1260px){
+    .container{
+        display: none;
+    }
+    .minLeft{
+        display: block;
+    }
+}

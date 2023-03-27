@@ -10,6 +10,7 @@ import UploadIcon from "@mui/icons-material/Upload";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import style2 from "./Tweetpost.module.css";
 import { userTweet,forPassingId, indexAtom } from "../../../Recoil/atom";
+import { FaRegComment } from "react-icons/fa";
 
 function Tweetpost() {
   const tweetPostData = useRecoilValue(userTweet);
@@ -49,8 +50,8 @@ function Tweetpost() {
         </div>
         <div className={style2.icons}>
           <span>
-            {tweetPostData.tweetCount}
-            <ChatBubbleOutlineIcon />
+    
+            <FaRegComment />
           </span>
           <span>
             {tweetPostData.retweetCount}
@@ -112,7 +113,7 @@ function Tweetpost() {
           <div>
             <Avatar
               className={style2.avatar}
-              src="https://pbs.twimg.com/media/FTduUpuXEAA70eS?format=jpg&name=small"
+              src=""
             />
           </div>
 

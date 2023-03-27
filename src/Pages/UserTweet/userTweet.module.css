@@ -1,0 +1,47 @@
+.mainDiv{
+
+}
+.Photo1{
+    height: 3.5rem;
+    border-radius: 50%;
+  margin-left: 1rem;
+  position: absolute;
+  top:4rem;
+  }
+
+.arrow{
+
+position: absolute;
+margin: 1rem;
+}
+.btn{
+    width: 5rem;
+    height: 2rem;
+    border-radius: 25px;
+    border: none;
+    background-color: #00acee;
+    color: white;
+    font-weight: 600;
+    position: absolute;
+    top:1rem;
+    right: 1rem;
+}
+.inputs{
+    height: 8rem;
+    width: 23rem;
+
+    margin-top:4rem;
+    border: none;
+    margin-left: 6rem;
+   }
+   ::placeholder{
+    font-size: 25px;
+   }
+   .Icons{
+    color: #00acee;
+    display: flex;
+gap:1rem;
+padding-left: 1rem;
+width: 25rem;
+margin-left: 6rem;
+   }

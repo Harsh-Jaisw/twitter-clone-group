@@ -19,7 +19,7 @@ function Tweetpage() {
      <Tweetpost/> 
       </div>
       <div className={style.rightContainer}>
-        <RightSection />
+        <RightSection/>
       </div>
     </div>
     </div>

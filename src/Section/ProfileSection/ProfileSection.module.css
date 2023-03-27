@@ -1,6 +1,7 @@
 .wrapper{
   border:1px solid lightgray;
     height:35rem;
+    width: auto;
     }
     
     .feed__header {
@@ -31,7 +32,7 @@
       flex-direction: column;
     }
     .container{
-      width:100%;
+      width:auto;
         height: 13rem;
     }
     .Avatarsection{
@@ -196,4 +197,8 @@
     margin-left: 1rem;
  } 
  
- 
+ @media screen and (max-width:1008px) {
+  .wrapper{
+    width: auto;
+  }
+ }

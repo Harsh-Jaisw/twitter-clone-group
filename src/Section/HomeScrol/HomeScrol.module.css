@@ -14,4 +14,19 @@ height: 100%;
 .ScrolDiv::-webkit-scrollbar {
     display: none;
   }
+  .btn{
+    display:none;
+  }
+   @media  screen and (max-width:660px) {
+    .scrollDiv{
+      height:auto;
+    }
+    .btn{
+      display: block;
+      position: fixed;
+      top:38rem;
+      right:3rem ;
+    }
+  }
+
 

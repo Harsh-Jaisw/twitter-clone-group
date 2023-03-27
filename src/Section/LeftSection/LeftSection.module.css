@@ -106,4 +106,9 @@ background-color:lightgray;
 
 }
 
-
+.Icons{
+    color:#1D9BFD;
+    margin-left: 4rem;
+    display: flex;
+ gap: 2rem;
+ }

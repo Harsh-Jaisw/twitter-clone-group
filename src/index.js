@@ -15,6 +15,7 @@ import {
 import Profile from './Pages/Profile/Profile';
 import Profile2 from './Pages/Profile2/Profile2';
 import Tweetpage from './Pages/Tweetreply/Tweetreply';
+import UserTweet from './Pages/UserTweet/UserTweet';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
   {
     path:"/Tweetpage",
     element:<Tweetpage/>,
+  },
+  {
+    path:'/usertweet',
+    element:<UserTweet/>,
   }
 ]);
 

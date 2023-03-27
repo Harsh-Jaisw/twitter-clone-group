@@ -5,16 +5,23 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import { arrs } from "../../const";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
-import { useState } from "react";
+import { useState,useRef } from "react";
 import PopOver from "../../Atom/PopOver/PopOver";
 import { Link } from "react-router-dom";
 import { tweetPosts } from "../../const";
 import { isTweetPost, newtweet } from "../../Recoil/atom";
+import EventRepeatOutlinedIcon from "@mui/icons-material/EventRepeatOutlined";
+import SentimentSatisfiedAltOutlinedIcon from "@mui/icons-material/SentimentSatisfiedAltOutlined";
+import BallotOutlinedIcon from "@mui/icons-material/BallotOutlined";
+import GifBoxOutlinedIcon from "@mui/icons-material/GifBoxOutlined";
+import BrokenImageOutlinedIcon from "@mui/icons-material/BrokenImageOutlined";
 import { useRecoilState, useSetRecoilState } from "recoil";
 function LeftSection() {
   const [open, setOpen] = useState(false);
   const [tweet, setTweet] = useState("");
-  const [loginStatus,setLoginStatus] = useRecoilState(isTweetPost)
+  const inputRef = useRef(null);
+  const [image, setImage] = useState("");
+  const [tweetStatus,setTweetStatus] = useRecoilState(isTweetPost)
   const [tweets,setTweets]=useRecoilState(newtweet)
   const list = JSON.parse(localStorage.getItem("UserDetail"));
   function handleChange(e) {
@@ -24,24 +31,39 @@ function LeftSection() {
   const handleClickOpen = () => {
     setOpen(true);
   };
+  function HandleImageClick() {
+    inputRef.current.click();
+  }
+  function handleOnSelectImage(e) {
+    let reader = new FileReader();
+    reader.onload = (e) => {
+      setImage(e.target.result);
+      // inputRef.current = null;
+    };
+    reader.readAsDataURL(e.target.files[0]);
+  }
 
   const handleClose = () => {
     
     const obj = {
       id: Math.random(),
-      profile: ("https://www.imgstatus.com/wp-content/uploads/2019/11/Whastapp-Dp-Joker.jpg"),
+      profile: ("https://www.imgstatus.com/wp-content/uploads/2019/11/Whastapp-Dp-Joker.jpg"
+          
+      ),
       name: list[0].name,
       handlerName: "@" + list[0].email,
       organization: "",
       tweetText: tweet,
-      tweetPic:
-        "https://lh3.googleusercontent.com/8ygpNx4Er1H9LmB-D8W7cBi-qsvcDSDlWw2CVIk5bHFM77q6a46V0GNxSzopAUtvLKIApDTW7RKnrJ7m7Yp4obN1s23V3dRMrYLwvz5GJc_gu1N-M8tGkyhFYGf40nwZCg7jbgGa1g=w1920-h1080",
-      tweetCount: 0,
-      retweetCount: 0,
-      likesCount: 0,
-      viewsCount: 0,
-      followers:0,
-      followings: 0,
+      
+      tweetPic:image,
+
+      tweetCount: 100,
+      
+      retweetCount: 100,
+      likesCount: 100,
+      viewsCount: "102k",
+      followers: 200,
+      followings: 400,
       joinedDate: "22 dec 2022",
     };
     setOpen(false);
@@ -50,10 +72,11 @@ function LeftSection() {
      
     }
    
-    setTweets([obj,...tweets])
-    setLoginStatus(loginStatus+1)
+    setTweets(tweets.unshift(obj))
+    setTweetStatus(tweetStatus+1)
     setTweet("");
-    
+    setImage("");
+    inputRef.current.value = ""
     
   };
   // console.log(storeTweet)
@@ -102,6 +125,27 @@ function LeftSection() {
                 value={tweet}
                 onChange={handleChange}
               />
+                 {image && (
+          <div className={style.imageWrapper}>
+            <img src={image} height="50%" width="50%" alt="foo" />
+          </div>
+        )}
+
+<div className={style.Icons}>
+          {" "}
+          <BrokenImageOutlinedIcon onClick={HandleImageClick} />
+          <input
+            type="file"
+            hidden
+            ref={inputRef}
+            onChange={handleOnSelectImage}
+            name="tweetPic"
+          />
+          <GifBoxOutlinedIcon />
+          <BallotOutlinedIcon />
+          <SentimentSatisfiedAltOutlinedIcon />
+          <EventRepeatOutlinedIcon />
+        </div>
               <DialogActions>
                 <Buttons
                   btnNext={handleClose}
