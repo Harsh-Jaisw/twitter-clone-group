@@ -16,6 +16,7 @@ import BallotOutlinedIcon from "@mui/icons-material/BallotOutlined";
 import GifBoxOutlinedIcon from "@mui/icons-material/GifBoxOutlined";
 import BrokenImageOutlinedIcon from "@mui/icons-material/BrokenImageOutlined";
 import { useRecoilState } from "recoil";
+import {AiOutlineClose} from "react-icons/ai"
 function LeftSection() {
   const [open, setOpen] = useState(false);
   const [tweet, setTweet] = useState("");
@@ -42,7 +43,9 @@ function LeftSection() {
     };
     reader.readAsDataURL(e.target.files[0]);
   }
-
+  function handleCloseDialog(){
+    setOpen(false)
+  }
   const handleClose = () => {
     const obj = {
       id: Math.random(),
@@ -121,6 +124,8 @@ function LeftSection() {
               open={open}
               onClose={handleClose}
             >
+                
+             <span onClick={handleCloseDialog} style={{padding:" 1rem 0 0 1rem"}}><AiOutlineClose/></span>
               <img
                 src="https://www.imgstatus.com/wp-content/uploads/2019/11/Whastapp-Dp-Joker.jpg"
                 alt=""
@@ -131,6 +136,7 @@ function LeftSection() {
                 placeholder="What's happening?"
                 value={tweet}
                 onChange={handleChange}
+                name="hide"
               />
               {image && (
                 <div className={style.imageWrapper}>

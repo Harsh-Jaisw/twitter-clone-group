@@ -82,13 +82,17 @@ background-color:lightgray;
     padding: 1rem;
 }
 .ForTweet{
-    width: 35rem;
+    width: 32rem;
     overflow-x: hidden;
+    resize:none;
     height: 10rem;
     outline: none;
-    border: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
     padding-left: 3rem;
-}
+    margin: 0 1rem 0.6rem 3rem;
+ }
 .Photo1{
     height: 3rem;
     width: 3rem;
