@@ -3,12 +3,14 @@
     width: 25rem;
   display: flex;
   flex-direction: column;
+  height:100vh;
   justify-content: space-around;
 }
 .popdiv{
   margin-left: 8rem;
   margin-bottom: .7rem;
 }
+
 .btnDiv{
  
   height: 100%; 
@@ -26,9 +28,7 @@
     color: white;
     font-size: larger;
 }
-.dialog{
-    
-}
+
 .btnI{
     width: 15rem;
     height: 3rem;
@@ -87,7 +87,7 @@ background-color:lightgray;
     height: 10rem;
     outline: none;
     border: none;
-   
+    padding-left: 3rem;
 }
 .Photo1{
     height: 3rem;

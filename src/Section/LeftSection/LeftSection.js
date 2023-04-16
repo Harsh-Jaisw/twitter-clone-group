@@ -109,7 +109,18 @@ function LeftSection() {
               Sign="Tweet"
               btnNext={handleClickOpen}
             />
-            <Dialog className={style.dialog} open={open} onClose={handleClose}>
+            <Dialog
+              PaperProps={{
+                style: {
+                  bottom:"8rem",
+                  right:"2rem",
+                  maxWidth:"50rem",
+                  borderRadius:"20px"
+                },
+              }}
+              open={open}
+              onClose={handleClose}
+            >
               <img
                 src="https://www.imgstatus.com/wp-content/uploads/2019/11/Whastapp-Dp-Joker.jpg"
                 alt=""
@@ -117,7 +128,7 @@ function LeftSection() {
               />
               <textarea
                 className={style.ForTweet}
-                placeholder="What is happening ?"
+                placeholder="What's happening?"
                 value={tweet}
                 onChange={handleChange}
               />
