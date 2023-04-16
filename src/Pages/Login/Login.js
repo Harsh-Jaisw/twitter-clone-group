@@ -111,6 +111,7 @@ export default function Login() {
         fullScreen={fullScreen}
         open={open}
         aria-labelledby="responsive-dialog-title"
+        
       >
 
        <div className={style.maincontainer}>

@@ -101,13 +101,14 @@ background-color:lightgray;
     margin-left: 1rem;
  }
 .btnTweet{
-
-    background-color:   #00acee;
+    position: relative;
+    left:10rem;
+    background-color:#00acee;
     border: white;
     color: white;
     border-radius: 20px;
     font-size: larger;
-
+    height:2rem
 }
 
 .Icons{

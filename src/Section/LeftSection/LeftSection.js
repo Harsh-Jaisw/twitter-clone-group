@@ -126,7 +126,7 @@ function LeftSection() {
             >
               <span
                 onClick={handleCloseDialog}
-                style={{ padding: " 1rem 0 0 1rem" ,cursor:"pointer"}}
+                style={{ padding: " 1rem 0 0 1rem", cursor: "pointer" }}
               >
                 <AiOutlineClose />
               </span>
@@ -140,7 +140,6 @@ function LeftSection() {
                 placeholder="What's happening?"
                 value={tweet}
                 onChange={handleChange}
-                
               />
               {image && (
                 <div className={style.imageWrapper}>
@@ -162,14 +161,14 @@ function LeftSection() {
                 <BallotOutlinedIcon />
                 <SentimentSatisfiedAltOutlinedIcon />
                 <EventRepeatOutlinedIcon />
+                <DialogActions>
+                  <Buttons
+                    btnNext={handleClose}
+                    Sign="Tweet"
+                    className={style.btnTweet}
+                  />
+                </DialogActions>
               </div>
-              <DialogActions>
-                <Buttons
-                  btnNext={handleClose}
-                  Sign="Tweet"
-                  className={style.btnTweet}
-                />
-              </DialogActions>
             </Dialog>
           </div>
         </div>
