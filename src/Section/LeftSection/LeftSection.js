@@ -16,7 +16,7 @@ import BallotOutlinedIcon from "@mui/icons-material/BallotOutlined";
 import GifBoxOutlinedIcon from "@mui/icons-material/GifBoxOutlined";
 import BrokenImageOutlinedIcon from "@mui/icons-material/BrokenImageOutlined";
 import { useRecoilState } from "recoil";
-import {AiOutlineClose} from "react-icons/ai"
+import { AiOutlineClose } from "react-icons/ai";
 function LeftSection() {
   const [open, setOpen] = useState(false);
   const [tweet, setTweet] = useState("");
@@ -43,8 +43,8 @@ function LeftSection() {
     };
     reader.readAsDataURL(e.target.files[0]);
   }
-  function handleCloseDialog(){
-    setOpen(false)
+  function handleCloseDialog() {
+    setOpen(false);
   }
   const handleClose = () => {
     const obj = {
@@ -115,20 +115,24 @@ function LeftSection() {
             <Dialog
               PaperProps={{
                 style: {
-                  bottom:"8rem",
-                  right:"2rem",
-                  maxWidth:"50rem",
-                  borderRadius:"20px"
+                  bottom: "8rem",
+                  right: "2rem",
+                  maxWidth: "50rem",
+                  borderRadius: "20px",
                 },
               }}
               open={open}
               onClose={handleClose}
             >
-                
-             <span onClick={handleCloseDialog} style={{padding:" 1rem 0 0 1rem"}}><AiOutlineClose/></span>
+              <span
+                onClick={handleCloseDialog}
+                style={{ padding: " 1rem 0 0 1rem" ,cursor:"pointer"}}
+              >
+                <AiOutlineClose />
+              </span>
               <img
                 src="https://www.imgstatus.com/wp-content/uploads/2019/11/Whastapp-Dp-Joker.jpg"
-                alt=""
+                alt="joker"
                 className={style.BigPhoto}
               />
               <textarea
@@ -136,7 +140,7 @@ function LeftSection() {
                 placeholder="What's happening?"
                 value={tweet}
                 onChange={handleChange}
-                name="hide"
+                
               />
               {image && (
                 <div className={style.imageWrapper}>
