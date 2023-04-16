@@ -5,7 +5,7 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import { arrs } from "../../const";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
-import { useState,useRef } from "react";
+import { useState, useRef } from "react";
 import PopOver from "../../Atom/PopOver/PopOver";
 import { Link } from "react-router-dom";
 import { tweetPosts } from "../../const";
@@ -15,14 +15,14 @@ import SentimentSatisfiedAltOutlinedIcon from "@mui/icons-material/SentimentSati
 import BallotOutlinedIcon from "@mui/icons-material/BallotOutlined";
 import GifBoxOutlinedIcon from "@mui/icons-material/GifBoxOutlined";
 import BrokenImageOutlinedIcon from "@mui/icons-material/BrokenImageOutlined";
-import { useRecoilState, useSetRecoilState } from "recoil";
+import { useRecoilState } from "recoil";
 function LeftSection() {
   const [open, setOpen] = useState(false);
   const [tweet, setTweet] = useState("");
   const inputRef = useRef(null);
   const [image, setImage] = useState("");
-  const [tweetStatus,setTweetStatus] = useRecoilState(isTweetPost)
-  const [tweets,setTweets]=useRecoilState(newtweet)
+  const [tweetStatus, setTweetStatus] = useRecoilState(isTweetPost);
+  const [tweets, setTweets] = useRecoilState(newtweet);
   const list = JSON.parse(localStorage.getItem("UserDetail"));
   function handleChange(e) {
     setTweet(e.target.value);
@@ -44,21 +44,19 @@ function LeftSection() {
   }
 
   const handleClose = () => {
-    
     const obj = {
       id: Math.random(),
-      profile: ("https://www.imgstatus.com/wp-content/uploads/2019/11/Whastapp-Dp-Joker.jpg"
-          
-      ),
+      profile:
+        "https://www.imgstatus.com/wp-content/uploads/2019/11/Whastapp-Dp-Joker.jpg",
       name: list[0].name,
       handlerName: "@" + list[0].email,
       organization: "",
       tweetText: tweet,
-      
-      tweetPic:image,
+
+      tweetPic: image,
 
       tweetCount: 100,
-      
+
       retweetCount: 100,
       likesCount: 100,
       viewsCount: "102k",
@@ -69,15 +67,13 @@ function LeftSection() {
     setOpen(false);
     if (obj.tweetText !== "") {
       tweetPosts.unshift(obj);
-     
     }
-   
-    setTweets(tweets.unshift(obj))
-    setTweetStatus(tweetStatus+1)
+
+    setTweets(tweets.unshift(obj));
+    setTweetStatus(tweetStatus + 1);
     setTweet("");
     setImage("");
-    inputRef.current.value = ""
-    
+    inputRef.current.value = "";
   };
   // console.log(storeTweet)
 
@@ -113,7 +109,7 @@ function LeftSection() {
               Sign="Tweet"
               btnNext={handleClickOpen}
             />
-            <Dialog open={open} onClose={handleClose}>
+            <Dialog className={style.dialog} open={open} onClose={handleClose}>
               <img
                 src="https://www.imgstatus.com/wp-content/uploads/2019/11/Whastapp-Dp-Joker.jpg"
                 alt=""
@@ -125,27 +121,27 @@ function LeftSection() {
                 value={tweet}
                 onChange={handleChange}
               />
-                 {image && (
-          <div className={style.imageWrapper}>
-            <img src={image} height="50%" width="50%" alt="foo" />
-          </div>
-        )}
+              {image && (
+                <div className={style.imageWrapper}>
+                  <img src={image} height="50%" width="50%" alt="foo" />
+                </div>
+              )}
 
-<div className={style.Icons}>
-          {" "}
-          <BrokenImageOutlinedIcon onClick={HandleImageClick} />
-          <input
-            type="file"
-            hidden
-            ref={inputRef}
-            onChange={handleOnSelectImage}
-            name="tweetPic"
-          />
-          <GifBoxOutlinedIcon />
-          <BallotOutlinedIcon />
-          <SentimentSatisfiedAltOutlinedIcon />
-          <EventRepeatOutlinedIcon />
-        </div>
+              <div className={style.Icons}>
+                {" "}
+                <BrokenImageOutlinedIcon onClick={HandleImageClick} />
+                <input
+                  type="file"
+                  hidden
+                  ref={inputRef}
+                  onChange={handleOnSelectImage}
+                  name="tweetPic"
+                />
+                <GifBoxOutlinedIcon />
+                <BallotOutlinedIcon />
+                <SentimentSatisfiedAltOutlinedIcon />
+                <EventRepeatOutlinedIcon />
+              </div>
               <DialogActions>
                 <Buttons
                   btnNext={handleClose}

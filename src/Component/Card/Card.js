@@ -203,7 +203,7 @@ console.log(getTweet[takeLikes.Index].inrDcr )
       </div>
       {/* {getTweet.length ? (
       <> */}
-      {getTweet.map((tweetPost,i) => {
+      {getTweet?.map((tweetPost,i) => {
         return (
           <>
             <div key={tweetPost.id}  className={style.maindiv}>
@@ -214,7 +214,7 @@ console.log(getTweet[takeLikes.Index].inrDcr )
                 organization : tweetPost.organization,
                 tweetText : tweetPost.tweetText,
                 tweetPic : tweetPost.tweetPic,
-               profile:tweetPost.profile,
+                profile:tweetPost.profile,
                 tweetCount : tweetPost.tweetCount,
                 retweetCount : tweetPost.retweetCount,
                 likesCount : tweetPost.likesCount,

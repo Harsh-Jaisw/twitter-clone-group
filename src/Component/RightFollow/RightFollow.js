@@ -104,12 +104,12 @@ function RightFollow() {
       }
   return (
     <div className={style.mainParent}>
-    <h2>  Who to follow</h2>
-     {trending.map((data)=>
+    <h2>Who to follow</h2>
+     {trending?.map((data)=>
      <div className={style.wrapper}>
                   
                     <div className={style.img}>
-                    <Avatar alt="Remy Sharp" src={data.src} />
+                    <Avatar alt="Remy Sharp" src={data.src}  />
                       <h3 >
                         {data.text}
                         
@@ -128,7 +128,7 @@ function RightFollow() {
      )}
       {/* <div style={{marginLeft:"1.3rem",color:"#1D9BF0"}}>Show more</div> */}
       { (
-        <div style={{marginLeft:"1.3rem",color:"#1D9BF0"}} onClick={handleRequestSeeAll}>
+        <div style={{padding:" 0 1rem 1rem 1.5rem",color:"#1D9BF0"}} onClick={handleRequestSeeAll}>
           {isShowingAllTrendings ? "Show Less" : "Show More"}
         </div>
       )}
