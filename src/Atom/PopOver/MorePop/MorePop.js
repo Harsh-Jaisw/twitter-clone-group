@@ -9,9 +9,9 @@ const MorePop = ({ onClicks }) => {
     <PopupState variant="popover" popupId="demo-popup-popover">
       {(popupState) => (
         <div>
-          <button className={style.btn} {...bindTrigger(popupState)}>
+          <span className={style.btn} {...bindTrigger(popupState)}>
             <MoreHorizIcon className={style.more} />
-          </button>
+          </span>
           <Popover
             {...bindPopover(popupState)}
             anchorOrigin={{
@@ -23,10 +23,10 @@ const MorePop = ({ onClicks }) => {
               horizontal: "center",
             }}
           >
-            <Typography sx={{ p: 2 }} onClick={onClicks}>
+            <Typography sx={{ p: 2 }} className={style.typo} onClick={onClicks}>
               Remove Tweet
             </Typography>
-            <Typography sx={{ p: 2 }} onClick={onClicks}>This trend is harmful </Typography>
+            <Typography sx={{ p: 2 }} className={style.typo} onClick={onClicks}>This trend is harmful </Typography>
           </Popover>
         </div>
       )}
