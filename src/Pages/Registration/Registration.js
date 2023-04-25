@@ -99,7 +99,7 @@ export default function Registration() {
     localStorage.setItem("UserDetail", JSON.stringify(info));
     alert("succesfully registered!");
     setLogin(true);
-    tohome("/");
+    tohome("/home");
     setName("");
     setEmail("");
     setPhone("");

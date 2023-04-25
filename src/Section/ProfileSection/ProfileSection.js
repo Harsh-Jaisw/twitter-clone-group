@@ -42,7 +42,7 @@ function ProfileSection() {
     <>
       <div className={style.wrapper}>
         <div className={style.feed__header}>
-          <span onClick={() => nevigate("/")}>
+          <span onClick={() => nevigate("/home")}>
             <WestIcon />
           </span>
           <div className={style.dta}>

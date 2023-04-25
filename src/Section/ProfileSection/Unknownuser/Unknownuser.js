@@ -325,7 +325,7 @@ function Unknownuser() {
     <>
       <div className={style.wrapper}>
         <div className={style.feed__header}>
-          <p onClick={() => nevigate("/")}>
+          <p onClick={() => nevigate("/home")}>
             <WestIcon />
           </p>
           <h2>{unknownProfileData.name}</h2>

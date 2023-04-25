@@ -84,7 +84,7 @@ function LeftSection() {
     <>
       <div className={style.mainDiv}>
         <div className={style.btnDiv}>
-          <Link to="/">
+          <Link to="/home">
             <TwitterIcon
               style={{
                 color: "#00acee",

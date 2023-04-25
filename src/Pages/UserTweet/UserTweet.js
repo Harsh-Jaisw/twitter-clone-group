@@ -71,7 +71,7 @@ function UserTweet() {
       }
   return (
     <div className={style.mainDiv}>
-        <span className={style.arrow}onClick={() => nevigate("/")}>
+        <span className={style.arrow}onClick={() => nevigate("/home")}>
             <WestIcon />
           </span>
     <img

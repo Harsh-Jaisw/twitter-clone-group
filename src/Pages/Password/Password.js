@@ -39,7 +39,7 @@ export default function Password() {
      
       setLogin(true)
       alert("Success")
-      tohome("/")
+      tohome("/home")
     }
     const newArr1 = getData.findIndex(
       (x) => x.password === data

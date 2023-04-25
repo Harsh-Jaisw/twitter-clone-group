@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import Typography from "@mui/material/Typography";
 import Popover from "@mui/material/Popover";
 import PopupState, { bindTrigger, bindPopover } from "material-ui-popup-state";
@@ -15,6 +15,12 @@ const PopOver = () => {
     setLoginStatus(false);
     tologin("/login");
   }
+  
+  // useEffect(()=>{
+  //  if(!loginStatus){
+  //   tologin("/login")
+  //  }
+  // },[])
   const x = JSON.parse(localStorage.getItem("UserDetail"));
   console.log(x);
   return (
@@ -28,8 +34,8 @@ const PopOver = () => {
               className={style.photo}
             />{" "}
             <div style={{ display: "flex" ,flexDirection:"column"}}>
-              <span style={{ fontWeight: "600" }}>{x[index].name}</span>
-              <span style={{fontSize:"12px"}}>{x[index].email}</span>
+              <span style={{ fontWeight: "600" }}>{x[index]?.name}</span>
+              <span style={{fontSize:"12px"}}>{x[index]?.email}</span>
             </div>{" "}
             <MoreHorizOutlinedIcon />
           </button>
