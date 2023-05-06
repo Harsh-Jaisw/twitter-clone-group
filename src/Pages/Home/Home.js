@@ -17,7 +17,7 @@ function Home() {
    if(!isLoggedIn){
     navigate("/login")
    }
-  },[])
+  },[isLoggedIn])
   return (
     <div className={Style.homeDiv}>
        <div className={Style.minLeft}><MinLeft  /></div>

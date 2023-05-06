@@ -12,7 +12,7 @@ const navigate = useNavigate;
 export const arrs = [
   {
     icon: <HomeIcon style={{ fontSize: "28px" }} />,
-    text: <Link to="/"><span style={{color:'#0F1419'}}>Home</span> </Link>,
+    text: <Link to="/home"><span style={{color:'#0F1419'}}>Home</span> </Link>,
   },
   { icon: <TagSharpIcon style={{ fontSize: "28px" }} />, text: "Explore" },
   {
